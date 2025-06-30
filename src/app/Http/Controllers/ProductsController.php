@@ -30,42 +30,40 @@ class ProductsController extends Controller
         $product = Product::find($productId);
         $validatedData = $request->validated();
 
-        $product->name = $validatedData['name'];
-        $product->price = $validatedData['price'];
+        $product->name        = $validatedData['name'];
+        $product->price       = $validatedData['price'];
         $product->description = $validatedData['description'];
-
-        $product->seasons = implode(',', $validatedData['seasons']);
+        $product->seasons     = implode(',', $validatedData['seasons']);
 
         if ($request->hasFile('image')) {
-
-            if ($product->image) {
-
-            }
-
+            // 既存画像の削除処理がある場合はここに記述
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('storage/products'), $fileName);
             $product->image = 'storage/products/' . $fileName;
-
         }
+
         $product->save();
 
         return redirect()->route('products.show');
     }
+
     public function store(ProductRequest $request)
     {
         $validatedData = $request->validated();
-        $product = new Product();
-        $product->name = $validatedData['name'];
-        $product->price = $validatedData['price'];
+
+        $product              = new Product();
+        $product->name        = $validatedData['name'];
+        $product->price       = $validatedData['price'];
         $product->description = $validatedData['description'];
-        $product->seasons = implode(',', $validatedData['seasons']);
+        $product->seasons     = implode(',', $validatedData['seasons']);
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('products', 'public');
             $product->image = 'storage/' . $path;
         }
+
         $product->save();
+
         return redirect()->route('products.index');
     }
-    
 }

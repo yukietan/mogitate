@@ -22,7 +22,7 @@ class ProductsTableSeeder extends Seeder
             'image' => 'storage/products/kiwi.png'
             ];
             DB::table('products')->insert($param);
-    
+
         $param = [
             'name' => 'ストロベリー',
             'price' => 1200,
@@ -30,7 +30,7 @@ class ProductsTableSeeder extends Seeder
             'image' => 'storage/products/strawberry.png'
         ];
             DB::table('products')->insert($param);
-    
+
         $param = [
             'name' => 'オレンジ',
             'price' => 850,
@@ -38,7 +38,7 @@ class ProductsTableSeeder extends Seeder
             'image' => 'storage/products/orange.png'
         ];
             DB::table('products')->insert($param);
-     
+
         $param = [
             'name' => 'スイカ',
             'price' => 700,
