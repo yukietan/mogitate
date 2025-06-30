@@ -39,8 +39,7 @@ Laravel バージョン: 8.83.29
 MySQL バージョン: 8.0.26
 
 ## ER図 
-![ER図](.src/public/image/er-mogitate.drawio.png)
-
+![ER図](https://github.com/yukietan/mogitate/blob/main/src/public/image/er-mogitate.drawio.png?raw=true)
 ## URL
 
 環境開発 : http://localhost/
