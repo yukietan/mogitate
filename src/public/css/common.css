@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pagination li {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  color: black;
+}
+
+.pagination li.active {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: black;
+}
+
+.pagination li.disabled {
+  opacity: 0.5;
+}
